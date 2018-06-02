@@ -7,11 +7,6 @@ const {
     GraphQLSchema
 } = graphql
 
-const users = [
-    { id: '23', firstName: 'Max', age: 20 },
-    { id: '47', firstName: 'Holger', age: 21 },
-];
-
 const UserType = new GraphQLObjectType({
     name: 'User',
     fields: {
