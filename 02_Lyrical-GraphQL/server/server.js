@@ -7,8 +7,10 @@ const schema = require('./schema/schema');
 
 const app = express();
 
+require('dotenv').config()
+
 // Replace with your mongoLab URI
-const MONGO_URI = '';
+const MONGO_URI = process.env.DB_CONNECTION_STRING;
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
