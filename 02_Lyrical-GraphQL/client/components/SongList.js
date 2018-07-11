@@ -19,7 +19,7 @@ class SongList extends Component {
                 <ul className="collection">
                     {this.renderSongs()}
                 </ul>
-                <Link className="btn-floating btn-large red right" to="songs/new" > 
+                <Link className="btn-floating btn-large red right" to="songs/new" >
                     <i className="material-icons">add</i>
                 </Link>
             </div>
@@ -28,6 +28,15 @@ class SongList extends Component {
     }
 }
 
+const deleteSong = gql`
+mutation deleteSong($id: ID) {
+    deleteSong(id: $id) {
+      id,
+      title
+    }
+  }  
+`
 
-
-export default graphql(fetchSongs)(SongList);
+export default graphql(deleteSong)( 
+    graphql(fetchSongs)(SongList)
+);
