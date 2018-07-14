@@ -18,8 +18,7 @@ class LyricCreate extends Component {
             variables: {
                 songId: this.props.songId, 
                 content: this.state.content
-            },
-            refetchQueries: ["getSong"] 
+            }
         }).then(()=> this.setState({content:''}));
     }
 
@@ -39,9 +38,11 @@ class LyricCreate extends Component {
 const mutation = gql`
 mutation addLyricToSong($songId: ID, $content: String) {
     addLyricToSong(songId: $songId, content: $content) {
-      lyrics {
-        content
-      }
+      id
+        lyrics {
+            id
+            content
+        }
     }
   }
   
