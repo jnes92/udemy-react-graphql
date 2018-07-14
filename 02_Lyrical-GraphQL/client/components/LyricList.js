@@ -12,7 +12,7 @@ class LyricList extends Component {
     render() {
         return (
             <ul className="collection">
-                LyricList
+                {this.renderLyrics()}
             </ul>
         )
     }

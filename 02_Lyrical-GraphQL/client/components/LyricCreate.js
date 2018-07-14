@@ -18,7 +18,8 @@ class LyricCreate extends Component {
             variables: {
                 songId: this.props.songId, 
                 content: this.state.content
-            }      
+            },
+            refetchQueries: ["getSong"] 
         }).then(()=> this.setState({content:''}));
     }
 
