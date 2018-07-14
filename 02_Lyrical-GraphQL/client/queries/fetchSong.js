@@ -7,6 +7,7 @@ query getSong($songId: ID!) {
       title
       lyrics {
         id
+        content
       }
     }
   }
