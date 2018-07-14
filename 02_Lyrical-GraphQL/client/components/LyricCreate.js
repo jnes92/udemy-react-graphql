@@ -20,8 +20,6 @@ class LyricCreate extends Component {
                 content: this.state.content
             }      
         }).then(()=> this.setState({content:''}));
-
-        
     }
 
     render() {
