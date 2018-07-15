@@ -22,7 +22,16 @@ const mutation = new GraphQLObjectType({
                     req
                 });
             } 
-        }
+        },
+        logout: {
+            type: UserType,
+            resolve(parentValue, args, req) {
+                const { user } = req;
+                req.logout();
+                return user;
+            } 
+        },
+
     }
 });
 
