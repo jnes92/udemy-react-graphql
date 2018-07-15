@@ -42,6 +42,7 @@ mutation addLyricToSong($songId: ID, $content: String) {
         lyrics {
             id
             content
+            likes
         }
     }
   }
